@@ -1,158 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.12.1 on win32)" generated="2026-05-19T12:48:31.635167" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.12.1 on win32)" generated="2026-05-19T12:52:03.872416" rpa="false" schemaversion="5">
 <suite id="s1" name="Criar Usuario" source="C:\qa-portfolio\web-tests\tests\criar_usuario.robot">
 <kw name="Abrir o navegador" owner="setup" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:33.640994" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com/'.</msg>
+<msg time="2026-05-19T12:52:05.992371" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com/'.</msg>
 <arg>url=${URL}</arg>
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-05-19T12:48:33.640994" elapsed="4.915040"/>
+<status status="PASS" start="2026-05-19T12:52:05.991374" elapsed="5.970779"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.556034" elapsed="0.057633"/>
+<status status="PASS" start="2026-05-19T12:52:11.963151" elapsed="0.028919"/>
 </kw>
 <kw name="Delete All Cookies" owner="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.613667" elapsed="0.041886"/>
+<status status="PASS" start="2026-05-19T12:52:11.993070" elapsed="0.043766"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:33.639996" elapsed="5.015557"/>
+<status status="PASS" start="2026-05-19T12:52:05.991374" elapsed="6.045462"/>
 </kw>
 <test id="s1-t1" name="Cenário: Login válido" line="9">
 <kw name="Acessar ao site &quot;Automation Exercise&quot;" owner="home_keyword" source_name="Acessar ao site &quot;${TITULO}&quot;">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${TITULO}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.656602" elapsed="0.013911"/>
+<status status="PASS" start="2026-05-19T12:52:12.038034" elapsed="0.013210"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:38.675499" level="INFO">Page title is 'Automation Exercise'.</msg>
+<msg time="2026-05-19T12:52:12.056231" level="INFO">Page title is 'Automation Exercise'.</msg>
 <arg>${TITULO}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.670513" elapsed="0.004986"/>
+<status status="PASS" start="2026-05-19T12:52:12.051244" elapsed="0.004987"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:38.656602" elapsed="0.018897"/>
+<status status="PASS" start="2026-05-19T12:52:12.038034" elapsed="0.018197"/>
 </kw>
 <kw name="Clicar na opção do menu Signup/Login" owner="home_keyword">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${MENU_HOME_LOGIN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.676497" elapsed="0.026928"/>
+<status status="PASS" start="2026-05-19T12:52:12.057229" elapsed="0.022938"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:38.703947" level="INFO">Clicking element '//a[contains(@href, 'login')]'.</msg>
+<msg time="2026-05-19T12:52:12.080167" level="INFO">Clicking element '//a[contains(@href, 'login')]'.</msg>
 <arg>${MENU_HOME_LOGIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-19T12:48:38.703425" elapsed="4.979156"/>
+<status status="PASS" start="2026-05-19T12:52:12.080167" elapsed="1.850064"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:38.676497" elapsed="5.007082"/>
+<status status="PASS" start="2026-05-19T12:52:12.057229" elapsed="1.873002"/>
 </kw>
 <kw name="Verificar se a mensagem esta visivel" owner="common_keywords">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${MENSAGEM}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.684575" elapsed="0.014960"/>
+<status status="PASS" start="2026-05-19T12:52:13.931761" elapsed="0.013965"/>
 </kw>
 <arg>New User Signup!</arg>
-<status status="PASS" start="2026-05-19T12:48:43.683579" elapsed="0.015956"/>
+<status status="PASS" start="2026-05-19T12:52:13.931257" elapsed="0.014469"/>
 </kw>
 <kw name="Insira o nome e o email" owner="cadastro_keyword">
 <kw name="Gerar usuário fake" owner="usuarios_keywords">
 <kw name="Create List" owner="BuiltIn">
-<msg time="2026-05-19T12:48:43.701529" level="INFO">${generos} = ['male', 'female']</msg>
+<msg time="2026-05-19T12:52:13.947720" level="INFO">${generos} = ['male', 'female']</msg>
 <var>${generos}</var>
 <arg>male</arg>
 <arg>female</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.700533" elapsed="0.000996"/>
+<status status="PASS" start="2026-05-19T12:52:13.946724" elapsed="0.000996"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2026-05-19T12:48:43.702527" level="INFO">${genero} = female</msg>
+<msg time="2026-05-19T12:52:13.950713" level="INFO">${genero} = male</msg>
 <var>${genero}</var>
 <arg>random.choice($generos)</arg>
 <arg>random</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.701529" elapsed="0.001065"/>
+<status status="PASS" start="2026-05-19T12:52:13.947720" elapsed="0.002993"/>
 </kw>
 <if>
 <branch type="IF" condition="'${genero}' == 'male'">
 <kw name="First Name Male" owner="FakerLibrary">
+<msg time="2026-05-19T12:52:13.952247" level="INFO">${nome} = Keith</msg>
 <var>${nome}</var>
-<status status="NOT RUN" start="2026-05-19T12:48:43.702907" elapsed="0.000000"/>
+<status status="PASS" start="2026-05-19T12:52:13.951715" elapsed="0.000594"/>
 </kw>
-<status status="NOT RUN" start="2026-05-19T12:48:43.702594" elapsed="0.000313"/>
+<status status="PASS" start="2026-05-19T12:52:13.950713" elapsed="0.001596"/>
 </branch>
 <branch type="ELSE">
 <kw name="First Name Female" owner="FakerLibrary">
-<msg time="2026-05-19T12:48:43.703524" level="INFO">${nome} = Angela</msg>
 <var>${nome}</var>
-<status status="PASS" start="2026-05-19T12:48:43.703524" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-05-19T12:52:13.952707" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:43.702907" elapsed="0.000617"/>
+<status status="NOT RUN" start="2026-05-19T12:52:13.952309" elapsed="0.000398"/>
 </branch>
-<status status="PASS" start="2026-05-19T12:48:43.702594" elapsed="0.000930"/>
+<status status="PASS" start="2026-05-19T12:52:13.950713" elapsed="0.001994"/>
 </if>
 <kw name="Email" owner="FakerLibrary">
-<msg time="2026-05-19T12:48:43.704521" level="INFO">${email} = angelica55@example.com</msg>
+<msg time="2026-05-19T12:52:13.953705" level="INFO">${email} = hartjennifer@example.com</msg>
 <var>${email}</var>
-<status status="PASS" start="2026-05-19T12:48:43.703524" elapsed="0.001056"/>
+<status status="PASS" start="2026-05-19T12:52:13.952707" elapsed="0.000998"/>
 </kw>
 <return>
 <value>${nome}</value>
 <value>${email}</value>
-<status status="PASS" start="2026-05-19T12:48:43.704580" elapsed="0.000000"/>
+<status status="PASS" start="2026-05-19T12:52:13.953705" elapsed="0.000000"/>
 </return>
-<msg time="2026-05-19T12:48:43.704580" level="INFO">${nome} = Angela</msg>
-<msg time="2026-05-19T12:48:43.704580" level="INFO">${email} = angelica55@example.com</msg>
+<msg time="2026-05-19T12:52:13.953705" level="INFO">${nome} = Keith</msg>
+<msg time="2026-05-19T12:52:13.954718" level="INFO">${email} = hartjennifer@example.com</msg>
 <var>${nome}</var>
 <var>${email}</var>
-<status status="PASS" start="2026-05-19T12:48:43.700533" elapsed="0.004047"/>
+<status status="PASS" start="2026-05-19T12:52:13.946724" elapsed="0.007994"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:43.705518" level="INFO">Typing text 'Angela' into text field '//input[@data-qa='signup-name']'.</msg>
+<msg time="2026-05-19T12:52:13.954718" level="INFO">Typing text 'Keith' into text field '//input[@data-qa='signup-name']'.</msg>
 <arg>${NOVO_NOME}</arg>
 <arg>${nome}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.704580" elapsed="0.122615"/>
+<status status="PASS" start="2026-05-19T12:52:13.954718" elapsed="0.104704"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:43.828193" level="INFO">Typing text 'angelica55@example.com' into text field '//input[@data-qa='signup-email']'.</msg>
+<msg time="2026-05-19T12:52:14.060419" level="INFO">Typing text 'hartjennifer@example.com' into text field '//input[@data-qa='signup-email']'.</msg>
 <arg>${NOVO_EMAIL}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.827195" elapsed="0.071807"/>
+<status status="PASS" start="2026-05-19T12:52:14.060419" elapsed="0.079345"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:43.699535" elapsed="0.199467"/>
+<status status="PASS" start="2026-05-19T12:52:13.946724" elapsed="0.193040"/>
 </kw>
 <kw name="Clicar no botão Signup" owner="cadastro_keyword">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-05-19T12:48:43.899999" level="INFO">Clicking button '//button[@data-qa='signup-button']'.</msg>
+<msg time="2026-05-19T12:52:14.140761" level="INFO">Clicking button '//button[@data-qa='signup-button']'.</msg>
 <arg>${BTN_SIGNUP}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-05-19T12:48:43.899999" elapsed="18.142970"/>
+<status status="PASS" start="2026-05-19T12:52:14.140761" elapsed="0.068815"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:43.899002" elapsed="18.143967"/>
+<status status="PASS" start="2026-05-19T12:52:14.139764" elapsed="0.069812"/>
 </kw>
 <kw name="Verificar se a mensagem esta visivel" owner="common_keywords">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${MENSAGEM}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-05-19T12:49:02.043967" elapsed="0.016014"/>
+<status status="PASS" start="2026-05-19T12:52:14.210573" elapsed="1.978963"/>
 </kw>
 <arg>Enter Account Information</arg>
-<status status="PASS" start="2026-05-19T12:49:02.042969" elapsed="0.017012"/>
+<status status="PASS" start="2026-05-19T12:52:14.209576" elapsed="1.979960"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:38.655553" elapsed="23.405431"/>
+<status status="PASS" start="2026-05-19T12:52:12.036836" elapsed="4.152700"/>
 </test>
 <kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-05-19T12:49:02.063011" elapsed="2.420300"/>
+<status status="PASS" start="2026-05-19T12:52:16.191531" elapsed="2.346625"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:49:02.063011" elapsed="2.420300"/>
+<status status="PASS" start="2026-05-19T12:52:16.190535" elapsed="2.347621"/>
 </kw>
-<status status="PASS" start="2026-05-19T12:48:31.637899" elapsed="32.845412"/>
+<status status="PASS" start="2026-05-19T12:52:03.875407" elapsed="14.662749"/>
 </suite>
 <statistics>
 <total>
