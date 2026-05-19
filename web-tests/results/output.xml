@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.1 on win32)" generated="2026-05-19T12:31:15.665355" rpa="false" schemaversion="5">
+<suite id="s1" name="Criar Usuario" source="C:\qa-portfolio\web-tests\tests\criar_usuario.robot">
+<kw name="Abrir o navegador" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:17.530963" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com/'.</msg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-19T12:31:17.530963" elapsed="3.579051"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.110014" elapsed="0.048869"/>
+</kw>
+<kw name="Delete All Cookies" owner="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.158883" elapsed="0.018949"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:17.529885" elapsed="3.647947"/>
+</kw>
+<test id="s1-t1" name="Cenário: Login válido" line="9">
+<kw name="Acessar ao site &quot;Automation Exercise&quot;" owner="home_keyword" source_name="Acessar ao site &quot;${TITULO}&quot;">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${TITULO}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.178918" elapsed="0.013475"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:21.198374" level="INFO">Page title is 'Automation Exercise'.</msg>
+<arg>${TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.193389" elapsed="0.004985"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:21.178918" elapsed="0.019456"/>
+</kw>
+<kw name="Clicar na opção do menu Signup/Login" owner="home_keyword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENU_HOME_LOGIN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.199372" elapsed="0.023935"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:21.224305" level="INFO">Clicking element '//a[contains(@href, 'login')]'.</msg>
+<arg>${MENU_HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T12:31:21.224305" elapsed="2.322979"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:21.198374" elapsed="2.349908"/>
+</kw>
+<kw name="Verificar se a mensagem esta visivel" owner="common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-19T12:31:23.549348" elapsed="0.010900"/>
+</kw>
+<arg>New User Signup!</arg>
+<status status="PASS" start="2026-05-19T12:31:23.548282" elapsed="0.011966"/>
+</kw>
+<kw name="Insira o nome e o email" owner="cadastro_keyword">
+<kw name="Gerar usuário fake" owner="usuarios_keywords">
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2026-05-19T12:31:23.561245" level="INFO">${nome} = Katherine</msg>
+<var>${nome}</var>
+<status status="PASS" start="2026-05-19T12:31:23.561245" elapsed="0.000000"/>
+</kw>
+<kw name="Email" owner="FakerLibrary">
+<msg time="2026-05-19T12:31:23.562242" level="INFO">${email} = wardtracy@example.net</msg>
+<var>${email}</var>
+<status status="PASS" start="2026-05-19T12:31:23.561245" elapsed="0.000997"/>
+</kw>
+<return>
+<value>${nome}</value>
+<value>${email}</value>
+<status status="PASS" start="2026-05-19T12:31:23.562242" elapsed="0.000000"/>
+</return>
+<msg time="2026-05-19T12:31:23.562242" level="INFO">${nome} = Katherine</msg>
+<msg time="2026-05-19T12:31:23.562242" level="INFO">${email} = wardtracy@example.net</msg>
+<var>${nome}</var>
+<var>${email}</var>
+<status status="PASS" start="2026-05-19T12:31:23.560248" elapsed="0.001994"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:23.562242" level="INFO">Typing text 'Katherine' into text field '//input[@data-qa='signup-name']'.</msg>
+<arg>${NOVO_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T12:31:23.562242" elapsed="0.074803"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:23.638041" level="INFO">Typing text 'wardtracy@example.net' into text field '//input[@data-qa='signup-email']'.</msg>
+<arg>${NOVO_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T12:31:23.637045" elapsed="0.126659"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:23.560248" elapsed="0.203456"/>
+</kw>
+<kw name="Clicar no botão Signup" owner="cadastro_keyword">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-19T12:31:23.764702" level="INFO">Clicking button '//button[@data-qa='signup-button']'.</msg>
+<arg>${BTN_SIGNUP}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-19T12:31:23.763704" elapsed="1.921505"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:23.763704" elapsed="1.921505"/>
+</kw>
+<kw name="Verificar se a mensagem esta visivel" owner="common_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-19T12:31:25.686206" elapsed="0.011968"/>
+</kw>
+<arg>Enter Account Information</arg>
+<status status="PASS" start="2026-05-19T12:31:25.685209" elapsed="0.012965"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:21.177832" elapsed="4.521340"/>
+</test>
+<kw name="Fechar o navegador" owner="setup" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-05-19T12:31:25.700169" elapsed="2.366939"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:25.700169" elapsed="2.367702"/>
+</kw>
+<status status="PASS" start="2026-05-19T12:31:15.668355" elapsed="12.399516"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Criar Usuario" id="s1" pass="1" fail="0" skip="0">Criar Usuario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
