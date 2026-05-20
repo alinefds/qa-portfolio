@@ -15,6 +15,7 @@ Resource        ../resources/keywords/login_keyword.robot
 Resource        ../resources/keywords/usuarios_keywords.robot
 
 # pages
+Resource        ../resources/pages/account_page.robot
 Resource        ../resources/pages/login_page.robot
 Resource        ../resources/pages/home_page.robot
 Resource        ../resources/pages/cadastro_page.robot

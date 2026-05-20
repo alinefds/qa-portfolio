@@ -5,7 +5,24 @@ Resource    ../utils.robot
 *** Keywords ***
 
 Abrir o navegador
-    Open Browser    url=${URL}    browser=${BROWSER}
+    ${options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+
+    ${prefs}    Create Dictionary
+    ...    autofill.profile_enabled=${False}
+    ...    credentials_enable_service=${False}
+    ...    profile.password_manager_enabled=${False}
+
+    Call Method
+    ...    ${options}
+    ...    add_experimental_option
+    ...    prefs
+    ...    ${prefs}
+
+    Open Browser
+    ...    ${URL}
+    ...    ${BROWSER}
+    ...    options=${options}
+
     Maximize Browser Window
     Delete All Cookies
     # Start Video Recording

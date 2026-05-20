@@ -5,6 +5,8 @@ Resource    ../resources/utils.robot
 Suite Setup        Abrir o navegador
 Suite Teardown    Fechar o navegador
 
+Test Teardown    Deletar conta criada
+
 *** Test Cases ***
 Cenário: Criar Registro de Novo Usuario com Sucesso
     Acessar ao site "Automation Exercise"
@@ -18,4 +20,14 @@ Cenário: Criar Registro de Novo Usuario com Sucesso
     ...    ${nome}    
     ...    ${email}
     Inserir nova senha
+    Preencher data de aniversario
+    Selecionar a caixa de seleção Inscreva-se em nossa newsletter!
+    Selecionar a caixa de seleção Receive special offers from our partners! 
+    Verificar se a mensagem esta visivel    Address Information
+    Preencher as Informações de endereço
+    Clicar no botão Create Account
+    Verificar se a mensagem esta visivel    Account Created!
+    Clicar no botão Continue
+    Verificar se a mensagem esta visivel     Logged in as
+    Sleep    5
     
