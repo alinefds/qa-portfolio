@@ -5,12 +5,14 @@ Resource    ../utils.robot
 *** Keywords ***
 
 Preencher nome e email
-    ${nome}    ${email}    Gerar nome e email
+    ${nome}     Gerar nome fake   
+    ${email}    Gerar email fake
 
     Input Text    ${NOVO_NOME}     ${nome}
     Input Text    ${NOVO_EMAIL}    ${email}
 
     RETURN    ${nome}    ${email}
+
 
 
 Clicar no botão Signup 
@@ -28,8 +30,8 @@ Selecionar gênero
 Verificar se os campos nome e email estão preenchidos corretamente
     [Arguments]    ${nome_esperado}    ${email_esperado}
 
-    ${nome_preenchido}=     Get Value    ${NOME_PREENCHIDO}
-    ${email_preenchido}=    Get Value    ${EMAIL_PREENCHIDO}
+    ${nome_preenchido}     Get Value    ${NOME_PREENCHIDO}
+    ${email_preenchido}    Get Value    ${EMAIL_PREENCHIDO}
 
     Should Be Equal As Strings
     ...    ${nome_esperado}
@@ -37,5 +39,10 @@ Verificar se os campos nome e email estão preenchidos corretamente
 
     Should Be Equal As Strings
     ...    ${email_esperado}
-    ...    ${email_preenchido}
+    ...    ${email_preenchido}    
+
+Inserir nova senha
+    ${nova_senha}    Gerar password aleatorio
+    Input Text    ${NOVO_PASSWORD}    ${nova_senha}
+    RETURN     ${nova_senha}
     

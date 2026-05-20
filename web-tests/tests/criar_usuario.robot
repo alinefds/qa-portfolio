@@ -16,4 +16,6 @@ Cenário: Criar Registro de Novo Usuario com Sucesso
     Selecionar gênero
     Verificar se os campos nome e email estão preenchidos corretamente    
     ...    ${nome}    
-    ...    ${email}         
+    ...    ${email}
+    Inserir nova senha
+    

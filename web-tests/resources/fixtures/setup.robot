@@ -11,5 +11,5 @@ Abrir o navegador
     # Start Video Recording
 
 Fechar o navegador
-    # Capture Page Screenshot
+    Capture Page Screenshot
     Close All Browsers
