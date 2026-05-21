@@ -9,25 +9,23 @@ Test Teardown    Deletar conta criada
 
 *** Test Cases ***
 Cenário: Criar Registro de Novo Usuario com Sucesso
-    Acessar ao site "Automation Exercise"
-    Clicar na opção do menu Signup/Login
+    Validar página    Automation Exercise
+    Clicar em Signup/Login
     Verificar se a mensagem esta visivel    New User Signup!
-    ${nome}    ${email}    Preencher nome e email
-    Clicar no botão Signup 
+    ${nome}    ${email}    Preencher dados de cadastro
+    Clicar em Signup 
     Verificar se a mensagem esta visivel    Enter Account Information
     Selecionar gênero
-    Verificar se os campos nome e email estão preenchidos corretamente    
+    Validar dados pré-preenchidos nome e email
     ...    ${nome}    
     ...    ${email}
-    Inserir nova senha
+    Preencher senha
     Preencher data de aniversario
-    Selecionar a caixa de seleção Inscreva-se em nossa newsletter!
-    Selecionar a caixa de seleção Receive special offers from our partners! 
+    Selecionar newsletter
+    Selecionar ofertas especiais
     Verificar se a mensagem esta visivel    Address Information
     Preencher as Informações de endereço
-    Clicar no botão Create Account
+    Clicar em Create Account
     Verificar se a mensagem esta visivel    Account Created!
-    Clicar no botão Continue
+    Clicar em Continue
     Verificar se a mensagem esta visivel     Logged in as
-    Sleep    5
-    

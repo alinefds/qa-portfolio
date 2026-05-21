@@ -5,14 +5,13 @@ Resource    ../utils.robot
 *** Keywords ***
 
 Gerar nome fake
-    ${nome}    FakerLibrary.Name
+    ${nome}    Name
     RETURN    ${nome}
 
 Gerar email fake
     ${timestamp}    Get Time    epoch
     ${email}    Set Variable    teste${timestamp}@email.com
-
-    RETURN    ${email}
+    RETURN    ${email} 
 
 Gerar genero aleatorio
     ${generos}    Create List    male    female
@@ -21,29 +20,29 @@ Gerar genero aleatorio
     RETURN    ${genero}
 
 Gerar password aleatorio
-    ${password}    FakerLibrary.Password
+    ${password}   Password
     RETURN    ${password} 
 
 Gerar data de aniversario
-    ${dia}    FakerLibrary.Day Of Month
-    ${mes}    FakerLibrary.Month Name
+    ${dia}    Day Of Month
+    ${mes}    Month Name
     
     ${ano_atual}    Get Time    year
-    ${ano_maximo}   Evaluate    ${ano_atual} - 19
+    ${ano_mais_recente}   Evaluate    ${ano_atual} - 19
     ${ano_minimo}   Evaluate    ${ano_atual} - 120 
-    ${ano}=          FakerLibrary.Random Int    ${ano_minimo}    ${ano_maximo}
+    ${ano}         Random Int    ${ano_minimo}    ${ano_mais_recente}
 
     RETURN    ${dia}    ${mes}    ${ano}
 
 Gerar Informações Endereco
-    ${nome}             FakerLibrary.First Name
-    ${sobrenome}        FakerLibrary.Last Name
-    ${rua}              FakerLibrary.Street Address
+    ${nome}             First Name
+    ${sobrenome}        Last Name
+    ${rua}              Street Address
     ${pais}             Gerar Pais 
-    ${estado}           FakerLibrary.State  
-    ${cidade}           FakerLibrary.City
-    ${codigo_postal}    FakerLibrary.Zipcode
-    ${telefone}         FakerLibrary.Phone Number
+    ${estado}           State  
+    ${cidade}           City
+    ${codigo_postal}    Zipcode
+    ${telefone}         Phone Number
 
     RETURN    ${nome}    ${sobrenome}    ${rua}    ${pais}    ${estado}    
     ...    ${cidade}    ${codigo_postal}    ${telefone}  

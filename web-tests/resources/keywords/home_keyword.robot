@@ -4,12 +4,10 @@ Resource    ../../resources/utils.robot
 
 *** Keywords ***
 
-Acessar ao site "${TITULO}"
-    Wait Until Page Contains    ${TITULO} 
-    Title Should Be    ${TITULO}
+Validar página
+    [Arguments]    ${titulo}
+    Wait Until Element Is Visible    ${MENU_HOME_LOGIN}
+    Title Should Be             ${titulo}
 
-Clicar na opção do menu Signup/Login
-    Wait Until Element Is Visible        ${MENU_HOME_LOGIN}
-    Click Element    ${MENU_HOME_LOGIN}
-
-
+Clicar em Signup/Login
+    Clicar no botão   ${MENU_HOME_LOGIN}

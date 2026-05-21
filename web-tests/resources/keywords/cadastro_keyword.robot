@@ -4,86 +4,78 @@ Resource    ../utils.robot
 
 *** Keywords ***
 
-Preencher nome e email
-    ${nome}     Gerar nome fake   
-    ${email}    Gerar email fake
+Preencher dados de cadastro
+    ${nome}=     Gerar nome fake   
+    ${email}=    Gerar email fake
 
-    Input Text    ${NOVO_NOME}     ${nome}
-    Input Text    ${NOVO_EMAIL}    ${email}
+    Preencher campo    ${NOVO_NOME}     ${nome}
+    Preencher campo    ${NOVO_EMAIL}    ${email}
 
     RETURN    ${nome}    ${email}
 
 
 
-Clicar no botão Signup 
-    Click Button    ${BTN_SIGNUP}
+Clicar em Signup 
+    Clicar no botão    ${BTN_SIGNUP}
 
 Selecionar gênero
     ${genero}    Gerar genero aleatorio
 
-    IF    '${genero}' == 'male'
-        Click Button    ${MALE}  
+    IF    $genero == 'male'
+        Clicar no botão    ${MALE}  
     ELSE
-        Click Button    ${FEMALE}
+        Clicar no botão    ${FEMALE}
     END
 
-Verificar se os campos nome e email estão preenchidos corretamente
-    [Arguments]    ${nome_esperado}    ${email_esperado}
+Validar dados pré-preenchidos nome e email
+...    [Arguments]    ${nome_esperado}    ${email_esperado}
 
-    ${nome_preenchido}     Get Value    ${NOME_PREENCHIDO}
-    ${email_preenchido}    Get Value    ${EMAIL_PREENCHIDO}
-
-    Should Be Equal As Strings
+    Validar valor do campo
+    ...    ${NOME_PREENCHIDO}
     ...    ${nome_esperado}
-    ...    ${nome_preenchido}
 
-    Should Be Equal As Strings
-    ...    ${email_esperado}
-    ...    ${email_preenchido}    
+    Validar valor do campo
+    ...    ${EMAIL_PREENCHIDO}
+    ...    ${email_esperado}  
 
-Inserir nova senha
+Preencher senha
     ${nova_senha}    Gerar password aleatorio
-    Input Text    ${NOVO_PASSWORD}    ${nova_senha}
+    Preencher campo    ${NOVO_PASSWORD}    ${nova_senha}
     RETURN     ${nova_senha}
     
 Preencher data de aniversario
     ${dia}    ${mes}    ${ano}    Gerar data de aniversario
     ${dia}    Convert To Integer    ${dia}
-    Select From List By Label    ${SELECT_DIA}    ${dia}
-    Select From List By Label    ${SELECT_MES}    ${mes}
-    Select From List By Label    ${SELECT_ANO}    ${ano}
+    Selecionar valor da lista     ${SELECT_DIA}    ${dia}
+    Selecionar valor da lista     ${SELECT_MES}    ${mes}
+    Selecionar valor da lista     ${SELECT_ANO}    ${ano}
     
     RETURN    ${dia}    ${mes}    ${ano}
 
-Selecionar a caixa de seleção Inscreva-se em nossa newsletter!
-    Scroll Element Into View    ${SELECT_NEWSLETTER}
-    Click Element   ${SELECT_NEWSLETTER}
+Selecionar newsletter
+    Selecionar checkbox   ${SELECT_NEWSLETTER}
 
-Selecionar a caixa de seleção Receive special offers from our partners! 
-    Scroll Element Into View    ${SELECT_OFERTAS}
-    Click Element    ${SELECT_OFERTAS}
+Selecionar ofertas especiais
+    Selecionar checkbox    ${SELECT_OFERTAS}
     
 Preencher as Informações de endereço
     ${nome}    ${sobrenome}    ${rua}    ${pais}    ${estado}    
     ...    ${cidade}    ${codigo_postal}    ${telefone}    Gerar Informações Endereco
-    Input Text                    ${END_NOME}         ${nome} 
-    Input Text                    ${END_SOBRENOME}    ${sobrenome} 
-    Input Text                    ${END_ENDERECO}     ${rua}  
-    Select From List By Label     ${END_PAIS}         ${pais} 
-    Input Text                    ${END_ESTADO}       ${estado}   
-    Input Text                    ${END_CIDADE}       ${cidade} 
-    Input Text                    ${END_COD_POSTAL}   ${codigo_postal}  
-    Input Text                    ${END_TEL_PHONE}    ${telefone}  
+    Preencher campo               ${END_NOME}         ${nome} 
+    Preencher campo               ${END_SOBRENOME}    ${sobrenome} 
+    Preencher campo               ${END_ENDERECO}     ${rua}  
+    Selecionar valor da lista     ${END_PAIS}         ${pais} 
+    Preencher campo               ${END_ESTADO}       ${estado}   
+    Preencher campo               ${END_CIDADE}       ${cidade} 
+    Preencher campo               ${END_COD_POSTAL}   ${codigo_postal}  
+    Preencher campo               ${END_TEL_PHONE}    ${telefone}  
 
     RETURN    ${nome}    ${sobrenome}    ${rua}    ${pais}    ${estado}    
     ...    ${cidade}    ${codigo_postal}    ${telefone} 
     
-Clicar no botão Create Account
-    Scroll Element Into View    ${BTN_CREATE_ACCOUNT}
-    Click Button    ${BTN_CREATE_ACCOUNT}
+Clicar em Create Account
+    Clicar no botão   ${BTN_CREATE_ACCOUNT}
 
-Clicar no botão Continue
-    Fechar anuncio iframe
-    Scroll Element Into View    ${BTN_CONTINUE}
-    Click Element    ${BTN_CONTINUE}
+Clicar em Continue
+    Clicar no botão   ${BTN_CONTINUE}
 
