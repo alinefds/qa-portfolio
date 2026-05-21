@@ -26,8 +26,7 @@ Abrir o navegador
 
     Maximize Browser Window
     Delete All Cookies
-    # Start Video Recording
-
+    
 Fechar o navegador
     Capture Page Screenshot
     Close All Browsers

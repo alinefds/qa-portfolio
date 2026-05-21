@@ -1,7 +1,5 @@
 *** Settings ***
-Library        DebugLibrary
 Library        SeleniumLibrary
-Library        ScreenCapLibrary
 Library        FakerLibrary
 
 # fixtures
