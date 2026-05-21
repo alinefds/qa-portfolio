@@ -69,5 +69,5 @@ WEB Testing in Chrome and Docker:
             - ./results
         expire_in: 1 week
     script:
-        - robot -d ./results -v BROWSER:headlesschrome TestSitePractice.robot
+        - robot -d ./results -v BROWSER:headlesschrome web-tests/tests/criar_usuario.robot
     retry: 1
