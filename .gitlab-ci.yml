@@ -51,7 +51,8 @@ WEB_Testing_in_Chrome:
         - chromedriver --version
         - python3 --version
         # 11. Instala o Robot Framework e SeleniumLibrary
-        - python3 -m pip install robotframework robotframework-seleniumlibrary | grep "Successfully installed"
+        - python3 -m pip install robotframework robotframework-seleniumlibrary
+            robotframework-faker robotframework-screencaplibrary robotframework-debuglibrary | grep "Successfully installed"
     script:
         - robot -d ./results -v BROWSER:headlesschrome web-tests/tests/criar_usuario.robot
     retry: 1
