@@ -53,7 +53,7 @@ WEB_Testing_in_Chrome:
         # 11. Instala o Robot Framework e SeleniumLibrary
         - python3 -m pip install robotframework robotframework-seleniumlibrary | grep "Successfully installed"
     script:
-        - robot -d ./results -v BROWSER:headlesschrome web-tests/tests/arquivo.robot
+        - robot -d ./results -v BROWSER:headlesschrome web-tests/tests/criar_usuario.robot
     retry: 1
 
 # # Job Docker - execução dos testes em container Docker
