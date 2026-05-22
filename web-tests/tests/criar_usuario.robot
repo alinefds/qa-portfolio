@@ -19,7 +19,7 @@ Cenário: Criar Registro de Novo Usuario com Sucesso
     Validar dados pré-preenchidos nome e email
     ...    ${nome}    
     ...    ${email}
-    Preencher senha
+    ${nova_senha}    Preencher senha
     Preencher data de aniversario
     Selecionar newsletter
     Selecionar ofertas especiais
@@ -28,4 +28,4 @@ Cenário: Criar Registro de Novo Usuario com Sucesso
     Clicar em Create Account
     Verificar se a mensagem esta visivel    Account Created!
     Clicar em Continue
-    Verificar se a mensagem esta visivel     Logged in as
+    Verificar se a mensagem esta visivel     Logged in as ${nome}

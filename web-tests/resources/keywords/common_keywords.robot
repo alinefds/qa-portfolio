@@ -46,20 +46,10 @@ Preencher campo
     [Arguments]    ${locator}    ${texto}
 
     Wait Until Element Is Visible    ${locator}
+    Scroll Element Into View    ${locator}
     Clear Element Text               ${locator}
     Input Text                       ${locator}    ${texto}
 
-Selecionar checkbox
-    [Arguments]    ${locator}
-
-    ${marcado}    Get Element Attribute
-    ...    ${locator}
-    ...    checked
-
-    IF    not ${marcado}
-        Scroll Element Into View    ${locator}
-        Click Element               ${locator}
-    END
 
 Clicar no botão
     [Arguments]    ${locator}

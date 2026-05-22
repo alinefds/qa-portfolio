@@ -5,8 +5,8 @@ Resource    ../utils.robot
 *** Keywords ***
 
 Preencher dados de cadastro
-    ${nome}=     Gerar nome fake   
-    ${email}=    Gerar email fake
+    ${nome}     Gerar nome fake   
+    ${email}    Gerar email fake
 
     Preencher campo    ${NOVO_NOME}     ${nome}
     Preencher campo    ${NOVO_EMAIL}    ${email}
@@ -28,7 +28,7 @@ Selecionar gênero
     END
 
 Validar dados pré-preenchidos nome e email
-...    [Arguments]    ${nome_esperado}    ${email_esperado}
+    [Arguments]    ${nome_esperado}    ${email_esperado}
 
     Validar valor do campo
     ...    ${NOME_PREENCHIDO}
@@ -53,10 +53,10 @@ Preencher data de aniversario
     RETURN    ${dia}    ${mes}    ${ano}
 
 Selecionar newsletter
-    Selecionar checkbox   ${SELECT_NEWSLETTER}
+    Clicar no botão   ${SELECT_NEWSLETTER}
 
 Selecionar ofertas especiais
-    Selecionar checkbox    ${SELECT_OFERTAS}
+    Clicar no botão   ${SELECT_OFERTAS}
     
 Preencher as Informações de endereço
     ${nome}    ${sobrenome}    ${rua}    ${pais}    ${estado}    
